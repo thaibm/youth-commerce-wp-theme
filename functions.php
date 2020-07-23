@@ -735,3 +735,9 @@ function wp_get_tags_names($object, $field_name, $request)
 
 	return $formatted_tags;
 }
+
+add_filter( 'woocommerce_rest_check_permissions', 'my_woocommerce_rest_check_permissions', 90, 4 );
+
+function my_woocommerce_rest_check_permissions( $permission, $context, $object_id, $post_type  ){
+  return true;
+}
